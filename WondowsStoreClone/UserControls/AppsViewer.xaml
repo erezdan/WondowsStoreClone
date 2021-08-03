@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WondowsStoreClone.UserControls.AppsViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WondowsStoreClone.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1200"
+             Margin="15">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="0.02*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ScrollLeft" Grid.Column="0" Height="40" Width="40" Margin="4" VerticalAlignment="Center" Content="&lt;" Click="ScrollLeft_Click"/>
+        <ScrollViewer Name="AppsScrollView" 
+                      Grid.Column="1"
+                      VerticalScrollBarVisibility="Hidden"
+                      HorizontalScrollBarVisibility="Hidden">
+            <ScrollViewer.Resources>
+                <DataTemplate x:Key="AppListTemplate">
+                    <StackPanel/>
+                </DataTemplate>
+            </ScrollViewer.Resources>
+            <ItemsControl x:Name="AppsList"
+                          ItemTemplate="{StaticResource AppListTemplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+        <Button x:Name="ScrollRight" Grid.Column="2" Height="40" Width="40" Margin="4" VerticalAlignment="Center" Content="&gt;" Click="ScrollRight_Click"/>
+        
+    </Grid>
+</UserControl>
