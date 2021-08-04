@@ -45,5 +45,15 @@ namespace WondowsStoreClone.UserControls
             int widthOfOneApp = (int)(PresentedApps.First().ActualWidth + 2 * PresentedApps.First().Margin.Left);
             AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset + 2 * widthOfOneApp);
         }
+
+        private void AppsScrollView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            e.Handled = true;
+            var eventArgs = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eventArgs.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArgs.Source = sender;
+            var parent = ((Control)sender).Parent as UIElement;
+            parent.RaiseEvent(eventArgs);
+        }
     }
 }

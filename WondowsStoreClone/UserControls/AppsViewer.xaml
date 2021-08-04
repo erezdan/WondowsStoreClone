@@ -21,7 +21,8 @@
         <ScrollViewer Name="AppsScrollView" 
                       Grid.Column="1"
                       VerticalScrollBarVisibility="Hidden"
-                      HorizontalScrollBarVisibility="Hidden">
+                      HorizontalScrollBarVisibility="Hidden"
+                      PreviewMouseWheel="AppsScrollView_PreviewMouseWheel">
             <ScrollViewer.Resources>
                 <DataTemplate x:Key="AppListTemplate">
                     <StackPanel/>

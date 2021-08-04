@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WondowsStoreClone.Pages;
 
 namespace WondowsStoreClone
 {
@@ -20,9 +21,17 @@ namespace WondowsStoreClone
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Main MainWindowContentPage;
+
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowContentPage = new Main();
+        }
+
+        private void MainWindowFrame_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindowFrame.Content = MainWindowContentPage;
         }
     }
 }
