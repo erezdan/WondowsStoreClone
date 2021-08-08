@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WondowsStoreClone.UserControls"
+             xmlns:uc="clr-namespace:WondowsStoreClone.UserControls"
+             xmlns:class="clr-namespace:WondowsStoreClone"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -18,16 +19,12 @@
             <ColumnDefinition x:Name="RigetMostCol" Width="0.25*"></ColumnDefinition>
             <ColumnDefinition x:Name="RightCol" Width="0.25*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Source="/Images/TopAppIcons/81-tropical.png"
-               Grid.Row="0"
-               Grid.Column="0"
-               Grid.RowSpan="2"
-               Grid.ColumnSpan="3"
-               HorizontalAlignment="Stretch"
-               VerticalAlignment="Stretch"
-               Stretch="Fill"
-               Margin="2,2,2,2"
-               MouseUp="Image_MouseUp"/>
+        <uc:ZoomedImage Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="3"
+                        MouseUp="Image_MouseUp"
+                        ZoomedImageSource="/Images/TopAppIcons/81-tropical.png"/>
         <Image Source="/Images/TopAppIcons/82-circus fun.png"
                Grid.Column="3"
                Grid.Row="0"

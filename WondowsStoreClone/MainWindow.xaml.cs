@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WondowsStoreClone.Pages;
+using WondowsStoreClone.UserControls;
 
 namespace WondowsStoreClone
 {
@@ -31,7 +32,8 @@ namespace WondowsStoreClone
 
         private void MainWindowFrame_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindowFrame.Content = MainWindowContentPage;
+            AppDetails appDetails = new AppDetails();
+            MainWindowFrame.Content = new TopApps(); //appDetails;
         }
     }
 }

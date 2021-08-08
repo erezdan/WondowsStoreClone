@@ -47,7 +47,7 @@ namespace WondowsStoreClone.UserControls
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
     }
 }
