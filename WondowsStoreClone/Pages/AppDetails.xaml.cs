@@ -24,6 +24,9 @@ namespace WondowsStoreClone.Pages
         public delegate void OnBackButtonClicked(object sender, RoutedEventArgs e);
         public event OnBackButtonClicked BackButtonClicked;
 
+        public delegate void OnAppDetailsAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppDetailsAppClicked AppClicked;
+
         public AppDetails(AnApp anApp)
         {
             InitializeComponent();
@@ -31,6 +34,13 @@ namespace WondowsStoreClone.Pages
             AppDetaildTitleAndBackgroundUC.AppNameLable.Content = anApp.AppName;
             AppDetaildTitleAndBackgroundUC.AppImage.Source = anApp.AppImageSource;
             AppDetaildTitleAndBackgroundUC.BackButtonClicked += AppDetaildTitleAndBackgroundUC_BackButtonClicked;
+
+            OverviewTabUC.AppClicked += OverviewTabUC_AppClicked;
+        }
+
+        private void OverviewTabUC_AppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked?.Invoke(sender, e);
         }
 
         private void AppDetaildTitleAndBackgroundUC_BackButtonClicked(object sender, RoutedEventArgs e)
