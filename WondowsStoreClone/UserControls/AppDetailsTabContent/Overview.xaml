@@ -27,6 +27,6 @@
             sapiente officiis modi at sunt excepturi expedita sin
         </TextBlock>
         <Label FontSize="25" Foreground="White">People also like</Label>
-        <uc:AppsViewer x:Name="AppsViewerInsideOverviewTab"></uc:AppsViewer>
+        <uc:AppsViewer x:Name="AppsViewerInsideOverviewTab" Margin="16,15,14,15"></uc:AppsViewer>
     </StackPanel>
 </UserControl>

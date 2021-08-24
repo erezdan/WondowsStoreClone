@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="WondowsStoreClone.UserControls.AppDetailsTabContent.SystemRequirments"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WondowsStoreClone.UserControls.AppDetailsTabContent"
+             mc:Ignorable="d"
+             Name="SystemRequirmentUserControl"
+             d:DesignHeight="350" d:DesignWidth="800">
+    <StackPanel Orientation="Vertical"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Left"
+                Visibility="Visible"
+                Background="#2E2E2E"
+                Width="{Binding ElementName=SystemRequirmentUserControl, Path=ActualWidth}">
+        <Label FontSize="25" Foreground="White">This product should work on this device on</Label>
+        <Label FontSize="12" Foreground="White">Check the minimum requirment to be sure</Label>
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    Visibility="Visible"
+                    Background="#2E2E2E">
+            <Grid VerticalAlignment="Stretch"
+                  Margin="0 0 15 0"
+                  Width="390">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 0 0 1"  BorderBrush="Gray"/>
+                <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" BorderBrush="White"/>
+                <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" BorderBrush="White"/>
+                <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" BorderBrush="White"/>
+                <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="12" FontWeight="Bold" Foreground="White">Minimum</Label>
+                <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="10" Foreground="White">Your device must meet all requirments</Label>
+                <Label Grid.Column="0" Grid.Row="2" FontSize="12" Foreground="White" FontWeight="Bold">OS</Label>
+                <Label Grid.Column="1" Grid.Row="2" FontSize="12" Foreground="White">Windows 10 version or higher</Label>
+                <Label Grid.Column="0" Grid.Row="3" FontSize="12" Foreground="White" FontWeight="Bold">Architecture</Label>
+                <Label Grid.Column="1" Grid.Row="3" FontSize="12" Foreground="White">x86, x64</Label>
+                <Label Grid.Column="0" Grid.Row="4" FontSize="12" Foreground="White" FontWeight="Bold">Memory</Label>
+                <Label Grid.Column="1" Grid.Row="4" FontSize="12" Foreground="White">2GB</Label>
+            </Grid>
+            <Grid VerticalAlignment="Stretch"
+                  Width="390">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 0 0 1"  BorderBrush="Gray"/>
+                <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" BorderBrush="White"/>
+                <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" BorderBrush="White"/>
+                <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" BorderThickness="0 0 0 2" BorderBrush="White"/>
+                <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="12" FontWeight="Bold" Foreground="White">Recomended</Label>
+                <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="10" Foreground="White">Your device should meet all requirments</Label>
+                <Label Grid.Column="0" Grid.Row="2" FontSize="12" Foreground="White" FontWeight="Bold">OS</Label>
+                <Label Grid.Column="1" Grid.Row="2" FontSize="12" Foreground="White">Windows 10 version or higher</Label>
+                <Label Grid.Column="0" Grid.Row="3" FontSize="12" Foreground="White" FontWeight="Bold">Architecture</Label>
+                <Label Grid.Column="1" Grid.Row="3" FontSize="12" Foreground="White">x86, x64</Label>
+                <Label Grid.Column="0" Grid.Row="4" FontSize="12" Foreground="White" FontWeight="Bold">Memory</Label>
+                <Label Grid.Column="1" Grid.Row="4" FontSize="12" Foreground="White">Not specified</Label>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
