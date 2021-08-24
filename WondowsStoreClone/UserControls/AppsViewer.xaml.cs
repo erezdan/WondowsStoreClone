@@ -21,17 +21,29 @@ namespace WondowsStoreClone.UserControls
     public partial class AppsViewer : UserControl
     {
         List<AnApp> PresentedApps;
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
 
         public AppsViewer()
         {
             InitializeComponent();
 
-            PresentedApps = new List<AnApp>();
-            AppsList.ItemsSource = PresentedApps;
-            for (int ii = 0; ii < 9; ii++)
+            try
             {
-                PresentedApps.Add(new AnApp());
+                PresentedApps = new List<AnApp>();
+                AppsList.ItemsSource = PresentedApps;
+                for (int ii = 0; ii < 9; ii++)
+                {
+                    AnApp app = new AnApp();
+                    app.AppClicked += CurrAppClicked;
+                    PresentedApps.Add(app);
+                }
             }
+            catch { }
+        }
+        private void CurrAppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked(sender, e);
         }
 
         private void ScrollLeft_Click(object sender, RoutedEventArgs e)

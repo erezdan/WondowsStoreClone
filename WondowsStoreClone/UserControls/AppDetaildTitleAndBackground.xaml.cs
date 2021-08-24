@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 
 namespace WondowsStoreClone.UserControls
 {
-    /// <summary>
-    /// Interaction logic for AppDetaildTitleAndBackground.xaml
-    /// </summary>
     public partial class AppDetaildTitleAndBackground : UserControl
     {
+        public delegate void OnBackButtonClicked(object sender, RoutedEventArgs e);
+        public event OnBackButtonClicked BackButtonClicked;
+
         public AppDetaildTitleAndBackground()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace WondowsStoreClone.UserControls
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-
+            BackButtonClicked?.Invoke(sender, e);
         }
     }
 }

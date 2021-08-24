@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WondowsStoreClone.UserControls;
 
 namespace WondowsStoreClone.Pages
 {
@@ -20,9 +21,21 @@ namespace WondowsStoreClone.Pages
     /// </summary>
     public partial class AppDetails : Page
     {
-        public AppDetails()
+        public delegate void OnBackButtonClicked(object sender, RoutedEventArgs e);
+        public event OnBackButtonClicked BackButtonClicked;
+
+        public AppDetails(AnApp anApp)
         {
             InitializeComponent();
+
+            AppDetaildTitleAndBackgroundUC.AppNameLable.Content = anApp.AppName;
+            AppDetaildTitleAndBackgroundUC.AppImage.Source = anApp.AppImageSource;
+            AppDetaildTitleAndBackgroundUC.BackButtonClicked += AppDetaildTitleAndBackgroundUC_BackButtonClicked;
+        }
+
+        private void AppDetaildTitleAndBackgroundUC_BackButtonClicked(object sender, RoutedEventArgs e)
+        {
+            BackButtonClicked?.Invoke(sender, e);
         }
     }
 }

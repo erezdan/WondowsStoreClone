@@ -23,6 +23,9 @@ namespace WondowsStoreClone.UserControls
         public string AppName;
         public ImageSource AppImageSource;
 
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
         public AnApp()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace WondowsStoreClone.UserControls
 
         private void ProductImage_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            AppClicked(this, e);
         }
     }
 }

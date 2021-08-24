@@ -28,12 +28,27 @@ namespace WondowsStoreClone
         {
             InitializeComponent();
             MainWindowContentPage = new Main();
+            MainWindowContentPage.AppClicked += MainWindowContentPage_AppClicked;
+        }
+
+        private void MainWindowContentPage_AppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppDetails appDetails = new AppDetails(sender);
+            appDetails.BackButtonClicked += AppDetails_BackButtonClicked;
+            MainWindowFrame.Content = appDetails;
+        }
+
+        private void AppDetails_BackButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (MainWindowFrame.NavigationService.CanGoBack)
+            {
+                MainWindowFrame.NavigationService.GoBack();
+            }
         }
 
         private void MainWindowFrame_Loaded(object sender, RoutedEventArgs e)
         {
-            AppDetails appDetails = new AppDetails();
-            MainWindowFrame.Content = new TopApps(); //appDetails;
+            MainWindowFrame.Content = MainWindowContentPage;
         }
     }
 }
