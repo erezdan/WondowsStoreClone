@@ -35,7 +35,9 @@
                     <TabItem Header="System Requerment">
                         <ucappdet:SystemRequirments x:Name="SystemRequirmentsUC"/>
                     </TabItem>
-                    <TabItem Header="Reviews"></TabItem>
+                    <TabItem Header="Reviews">
+                        <ucappdet:Reviews></ucappdet:Reviews>
+                    </TabItem>
                     <TabItem Header="Related"></TabItem>
                 </TabControl>
             </Grid>
