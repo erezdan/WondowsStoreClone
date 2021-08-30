@@ -30,6 +30,8 @@ namespace WondowsStoreClone.Pages
             InitializeComponent();
 
             DealsAppsViewer.AppClicked += AnAppClicked;
+
+            ProductivityTopApps.AppClicked += AnAppClicked;
             FeaturesAppsViewer.AppClicked += AnAppClicked;
             MostPopulareViewer.AppClicked += AnAppClicked;
             TopFreeAppsViewer.AppClicked += AnAppClicked;

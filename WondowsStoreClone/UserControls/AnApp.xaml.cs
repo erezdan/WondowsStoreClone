@@ -39,6 +39,14 @@ namespace WondowsStoreClone.UserControls
             AppImageSource = ProductImage.Source;
         }
 
+        public AnApp(string inAppName, ImageSource inImageSource)
+        {
+            InitializeComponent();
+            ProductImage.Source = inImageSource;
+            AppNameText.Text = inAppName;
+            AppImageSource = inImageSource;
+        }
+
         private void ProductImage_MouseUp(object sender, MouseButtonEventArgs e)
         {
             AppClicked(this, e);
