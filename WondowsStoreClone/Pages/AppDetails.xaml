@@ -38,7 +38,9 @@
                     <TabItem Header="Reviews">
                         <ucappdet:Reviews></ucappdet:Reviews>
                     </TabItem>
-                    <TabItem Header="Related"></TabItem>
+                    <TabItem Header="Related">
+                        <ucappdet:Related></ucappdet:Related>
+                    </TabItem>
                 </TabControl>
             </Grid>
         </StackPanel>

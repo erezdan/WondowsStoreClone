@@ -43,7 +43,7 @@ namespace WondowsStoreClone.UserControls
         }
         private void CurrAppClicked(AnApp sender, RoutedEventArgs e)
         {
-            AppClicked(sender, e);
+            AppClicked?.Invoke(sender, e);
         }
 
         private void ScrollLeft_Click(object sender, RoutedEventArgs e)

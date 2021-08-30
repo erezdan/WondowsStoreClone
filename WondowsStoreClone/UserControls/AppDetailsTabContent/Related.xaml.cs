@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace WondowsStoreClone.UserControls.AppDetailsTabContent
 {
     /// <summary>
-    /// Interaction logic for Reviews.xaml
+    /// Interaction logic for Related.xaml
     /// </summary>
-    public partial class Reviews : UserControl
+    public partial class Related : UserControl
     {
-        public Reviews()
+        public Related()
         {
             InitializeComponent();
-
-            MainStackPanel.Children.Clear();
-            for (int ii = 0; ii < 9; ii++)
-            {
-                MainStackPanel.Children.Add(new AReview());
-            }
         }
     }
 }
